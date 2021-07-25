@@ -29,7 +29,8 @@ import { AppRoutingModule } from '../app-routing.module';
   exports:[
     HeaderComponent,
     FooterComponent,
-       FullComponent
+    LandingComponent,
+       
     
     
   ]
