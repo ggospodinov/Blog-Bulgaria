@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
 import { ThemeService } from './service/theme.service';
-import { ThemeComponent } from './theme/theme/theme.component';
+import { ThemeModule } from './theme/theme.module';
+
 import { UserModule } from './user/user.module';
 
 
@@ -16,7 +17,7 @@ import { UserModule } from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeComponent,
+    
    
     
     
@@ -26,7 +27,8 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    UserModule
+    UserModule,
+    ThemeModule
    
   ],
   providers: [ThemeService],
