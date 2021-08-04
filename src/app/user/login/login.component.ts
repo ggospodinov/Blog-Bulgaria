@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {ActivatedRoute, Router } from '@angular/router';
+import { emailValidator } from 'src/app/shared/validators';
 import { UserService } from '../user.service';
 
 @Component({
@@ -7,12 +10,41 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
+  // @ViewChild('emailInput', {read: ElementRef}) form!: ElementRef
 
-  constructor(private UserService: UserService) { }
+  emailValidator = emailValidator;
 
-  login(email: string, password: string): void{
-      this.UserService.login(email, password)
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private router: Router
+    ) { }
+
+    // ngAfterViewInit(): void{
+    //   console.log(this.form)
+    // }
+
+
+     login(form: NgForm): void {
+       if (form.invalid) { return; }
+       const { email, password } = form.value;
+       this.userService.login({ email, password }).subscribe({
+         next: () => {
+          const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
+         this.router.navigate([redirectUrl]);
+        },
+       error: (err) => {
+          console.log(err);
+        }
+      });
+    }
+  //  login(form: NgForm): void{
+  //    if(form.invalid) {return;}
+  //   const {email, password} =form.value
+  // this.userService.login(email, password)
+  //   const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
+  //   this.router.navigate([redirectUrl]);
+  // }
 
   
 

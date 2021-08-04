@@ -4,9 +4,10 @@ import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/comm
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
-import { FullComponent } from './full/full.component';
+
 import { AppRoutingModule } from '../app-routing.module';
 import { LocalStorage } from './injection-token';
+import { AuthActivate } from './guards/auth.activate';
 
 
 
@@ -16,7 +17,7 @@ import { LocalStorage } from './injection-token';
     HeaderComponent,
     FooterComponent,
     LandingComponent,
-    FullComponent,     
+        
   ],
   imports: [
     CommonModule,
@@ -67,7 +68,7 @@ import { LocalStorage } from './injection-token';
       },
       deps: [PLATFORM_ID]
     },
-    //AuthActivate
+    AuthActivate
   ]
 })
 export class CoreModule { }

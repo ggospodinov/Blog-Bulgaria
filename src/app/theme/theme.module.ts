@@ -5,6 +5,8 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemesComponent } from './themes/themes.component';
+import { ThemeService } from '../service/theme.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { ThemesComponent } from './themes/themes.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ThemeRoutingModule
-  ]
+  ],
+ 
 })
 export class ThemeModule { }

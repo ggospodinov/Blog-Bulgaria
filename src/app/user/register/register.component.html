@@ -1,21 +1,41 @@
 <div class="wrapper" style="background-image: url('../../../assets/images/maxresdefault.jpg');">
     <div class="inner">
-        <form action="">
+        <form [formGroup]="form" action=""  method="post" (ngSubmit)="register()">
             <h3>Registration Form</h3>
             <div class="form-group">
                 <div class="form-wrapper">
                     <label for="">Username:</label>
                     <div class="form-holder">
                         <i class="zmdi zmdi-account-o"></i>
-                        <input type="text" class="form-control">
+                        <input type="text" name="username" class="form-control"   formControlName="username">
                     </div>
+
+                    <ng-container *ngIf="form.get('username')?.touched">
+                        <p *ngIf="form.get('username')?.errors?.required" class="error">
+                          Username is required!
+                        </p>
+                        <p *ngIf="form.get('username')?.errors?.minlength" class="error">
+                          Username should be > 4
+                        </p>
+                      </ng-container>
+
                 </div>
                 <div class="form-wrapper">
                     <label for="">Email:</label>
                     <div class="form-holder">
-                        <i style="font-style: normal; font-size: 15px;">@</i>
-                        <input type="text" class="form-control">
+                        <!-- <i style="font-style: normal; font-size: 15px;">@</i> -->
+                        <input type="text"  name="email" class="form-control"  formControlName="email">
                     </div>
+
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p *ngIf="form.get('email')?.errors?.required" class="error">
+                          Email is required!
+                        </p>
+                        <p *ngIf="form.get('email')?.errors?.invalidEmail" class="error">
+                          Email is not valid!
+                        </p>
+                      </ng-container>
+
                 </div>
             </div>
             <div class="form-group">
@@ -23,15 +43,36 @@
                     <label for="">Password:</label>
                     <div class="form-holder">
                         <i class="zmdi zmdi-lock-outline"></i>
-                        <input type="password" class="form-control" placeholder="********">
+                        <input type="password" name="password" class="form-control" placeholder="" formControlName="password">
                     </div>
+
+                    <ng-container *ngIf="form.get('password')?.touched">
+                        <p *ngIf="form.get('password')?.errors?.required" class="error">
+                          Password is required!
+                        </p>
+                        <p *ngIf="form.get('password')?.errors?.minlength" class="error">
+                          Password must be at least 4 characters!
+                        </p>
+                      </ng-container>
                 </div>
+
+
                 <div class="form-wrapper">
                     <label for="">Repeat Password:</label>
                     <div class="form-holder">
                         <i class="zmdi zmdi-lock-outline"></i>
-                        <input type="password" class="form-control" placeholder="********">
+                        <input type="password"  name="rePassword" class="form-control" placeholder="" formControlName="rePassword">
                     </div>
+
+                    <ng-container *ngIf="form.get('rePassword')?.touched">
+                        <p *ngIf="form.get('rePassword')?.errors?.required" class="error">
+                          Repeat Password is required!
+                        </p>
+                        <p *ngIf="form.get('rePassword')?.errors?.sameValue" class="error">
+                          Repeat Password does not match password!
+                        </p>
+                      </ng-container>
+
                 </div>
             </div>
                         <div class="form-end">

@@ -11,16 +11,17 @@ import { ThemeService } from './service/theme.service';
 import { ThemeModule } from './theme/theme.module';
 
 import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    HomeComponent,
    
-    
-    
+  
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,8 @@ import { UserModule } from './user/user.module';
    
   ],
   providers: [ThemeService],
+
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
