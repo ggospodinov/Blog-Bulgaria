@@ -6,7 +6,9 @@ import { environment } from 'src/environments/environment';
 import { tap } from 'rxjs/operators';
 
 
-const apiURL = environment.apiURL;
+
+
+ const apiURL = environment.apiURL;
 
 @Injectable()
 export class UserService {
@@ -41,11 +43,14 @@ export class UserService {
     
   //   this.localStorage.setItem('<USER>', JSON.stringify(this.user));
   // }
+
   login(data: { email: string; password: string }) {
     return this.http.post<IUser>(`${apiURL}/login`, data, { withCredentials: true }).pipe(
-      tap((user) => this.user = user)
-    );
-  }
+     tap((user) => this.user = user)
+   );
+   }
+      
+
     register(data: { username: string; email: string; password: string }) {
       return this.http.post<IUser>(`${apiURL}/register`, data, { withCredentials: true }).pipe(
         tap((user) => this.user = user)

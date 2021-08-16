@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './user/user.service';
+import * as environment  from 'src/environments/environment'
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,8 @@ import { UserService } from './user/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  
 
   // title = 'Travel-Blog-Bulgaria';
 

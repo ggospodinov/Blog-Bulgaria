@@ -42,7 +42,7 @@ export class CreateimageComponent implements OnInit {
     //  this.imageService.addProfile(this.form.value.name, this.form.value.image);
     // this.form.reset();
     // this.imageData = null ;
-    console.log('submit image')
+    
   }
 
 }
