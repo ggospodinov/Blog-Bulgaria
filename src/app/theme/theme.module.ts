@@ -5,8 +5,13 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemesComponent } from './themes/themes.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ThemeService } from '../service/theme.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateimageComponent } from './createimage/createimage.component';
+import { AllimagesComponent } from './allimages/allimages.component';
+
+
 
 
 
@@ -15,12 +20,17 @@ import { FormsModule } from '@angular/forms';
     NewThemeComponent,
     ThemesListComponent,
     ThemeComponent,
-    ThemesComponent
+    ThemesComponent,
+    CreateimageComponent,
+    AllimagesComponent
+  
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
  
 })

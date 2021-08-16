@@ -4,7 +4,7 @@
       <div class="header-background">
         <span>New Theme</span>
       </div>
-      <form  #form="ngForm" (ngSubmit)="createTheme(form)">
+      <form  #form="ngForm" method="POST" (ngSubmit)="createTheme(form)" enctype="multipart/form-data">
         <div class="new-theme-title">
           <label for="themeName">Title <span class="red">*</span></label>
           <input #themeNameInput="ngModel" type="text" name="themeName" id="themeName" ngModel required minlength="5">
@@ -29,11 +29,16 @@
             </p> 
           </ng-container>
         </div>
+        <app-createimage></app-createimage>
+        <!-- <div class="new-theme-title">
+          <label for="image">Upload image<span class="red">*</span></label>
+          <input type="file" name="image" id="image" class="form-control-file">
+          </div> -->
         <div class="new-theme-buttons">
           <button  type="button"  routerLink="/themes" class="cancel">Cancel</button>
           <button class="public">Post</button>
         </div>
-        </form>
+      </form>
     </div>
   </div>
 </div>

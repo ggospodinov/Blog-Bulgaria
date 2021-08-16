@@ -28,7 +28,9 @@ export class RegisterComponent   implements OnDestroy  {
        password: ['', [Validators.required, Validators.minLength(4)]],
        rePassword: ['', [Validators.required, sameValueAsFactory(
         () => this.form?.get('password'), this.killSubscription
-      )]]
+      )]],
+      // image:['', [Validators.required]] 
+
 
     })
    }
@@ -45,6 +47,19 @@ export class RegisterComponent   implements OnDestroy  {
     })
       
   }
+  
+  // onFileSelect(event: Event) {
+  //   const file = (event.target as HTMLInputElement).files[0];
+  //   this.form.patchValue({ image: file });
+  //   const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg"];
+  //   if (file && allowedMimeTypes.includes(file.type)) {
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       this.imageData = reader.result as string;
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // }
 
   ngOnDestroy(): void {
     this.killSubscription.next();

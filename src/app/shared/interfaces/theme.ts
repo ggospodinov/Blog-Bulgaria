@@ -3,6 +3,7 @@ export interface ITheme {
     posts: string[];
     _id: string;
     themeName: string;
+    img: string;
     userId: {
       themes: string[],
       posts: string[],

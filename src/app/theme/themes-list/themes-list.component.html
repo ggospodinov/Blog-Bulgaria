@@ -1,13 +1,59 @@
-<div class="card mb-3">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-    <rect width="100%" height="100%" fill="#868e96"></rect>
-    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-  </svg>
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div> 
-  <div class="card-footer text-muted">
-    <button  routerLink="theme:id" class="btn btn-primary" >View Details</button>
-  </div>
-</div>
+<!-- <div class="container">
+  <main>
+    <div class="theme-title" *ngIf="themes">
+      <div *ngFor="let theme of themes | paginate: { 
+        itemsPerPage: 7, 
+        currentPage: page,
+        totalItems:totalLength
+        
+      }" 
+      class="theme-container">
+        <div class="theme-name-wrapper" [routerLink]="['/theme', theme._id]">
+          <div class="theme-name">
+            <a class="normal">
+              <h5>{{theme.themeName }}</h5>
+            </a>
+            <div class="columns">
+              <div>
+                <p>Date: <time>{{theme.created_at }}</time></p>
+                <div class="nick-name">
+                  <p>Username: <span>{{theme.userId.username}}</span></p>
+                </div>
+              </div>
+              <div class="subscribers">
+                <button *ngIf="isLogged" class="subscribe">Subscribe</button>
+                <p>Subscribers: <span>{{theme.subscribers.length}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+    <div *ngIf="!themes">Loading...</div>
 
+</main>
+</div> -->
+
+<div class="container" *ngIf="themes">
+  <div class="card-group vgr-cards" *ngFor="let theme of themes | paginate: { 
+    itemsPerPage: 5, 
+    currentPage: page,
+    totalItems:totalLength
+  }" >
+    <div class="card"  >
+      <div class="card-img-body">
+      <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">{{theme.themeName}}</h4>
+        <p class="card-text">{{theme.userId}}</p>
+        <a href="#" class="btn btn-outline-primary">Primary</a>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+</div>
