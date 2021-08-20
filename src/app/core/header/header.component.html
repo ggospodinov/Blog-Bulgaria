@@ -8,13 +8,14 @@
               <li>
                   <a routerLink="/login">Login</a>
               </li>
-              <li>
+                            <li>
                   <a routerLink="/register">Register</a>
               </li>
           </ul>
           <ul *ngIf="isLogged">
              <li routerLink="/profile">{{username}}'s profile</li> 
             <li (click)="logout()">Logout</li>
+            
           </ul>
       </div>
   </div>

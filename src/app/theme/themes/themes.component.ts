@@ -6,7 +6,7 @@ import { ThemeService } from 'src/app/service/theme.service';
 
 @Component({
   selector: 'app-themes',
-  templateUrl: './themes.component.html',
+  templateUrl:'./themes.component.html',
   styleUrls: ['./themes.component.css']
 })
 export class ThemesComponent  {

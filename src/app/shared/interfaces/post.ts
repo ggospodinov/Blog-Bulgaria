@@ -3,7 +3,7 @@ export interface IPost {
     likes: string[]
     _id: string;
     text: string;
-    img: string
+    immagePath: string;
     userId: {
       themes: string[];
       posts: string[];

@@ -39,7 +39,7 @@ export class RegisterComponent   implements OnDestroy  {
     if (this.form.invalid) { return; }
     this.userService.register(this.form.value).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       error: (err) => {
         console.error(err);

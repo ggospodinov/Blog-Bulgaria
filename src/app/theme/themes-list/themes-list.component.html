@@ -1,42 +1,4 @@
-<!-- <div class="container">
-  <main>
-    <div class="theme-title" *ngIf="themes">
-      <div *ngFor="let theme of themes | paginate: { 
-        itemsPerPage: 7, 
-        currentPage: page,
-        totalItems:totalLength
-        
-      }" 
-      class="theme-container">
-        <div class="theme-name-wrapper" [routerLink]="['/theme', theme._id]">
-          <div class="theme-name">
-            <a class="normal">
-              <h5>{{theme.themeName }}</h5>
-            </a>
-            <div class="columns">
-              <div>
-                <p>Date: <time>{{theme.created_at }}</time></p>
-                <div class="nick-name">
-                  <p>Username: <span>{{theme.userId.username}}</span></p>
-                </div>
-              </div>
-              <div class="subscribers">
-                <button *ngIf="isLogged" class="subscribe">Subscribe</button>
-                <p>Subscribers: <span>{{theme.subscribers.length}}</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
-    <div *ngIf="!themes">Loading...</div>
-
-</main>
-</div> -->
-
-<div class="container" *ngIf="themes">
+<div class="container" *ngIf="themes" >
   <div class="card-group vgr-cards" *ngFor="let theme of themes | paginate: { 
     itemsPerPage: 5, 
     currentPage: page,
@@ -44,12 +6,12 @@
   }" >
     <div class="card"  >
       <div class="card-img-body">
-      <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
+      <img class="card-img" src="https://im0-tub-ru.yandex.net/i?id=84dbd50839c3d640ebfc0de20994c30d&n=27&h=480&w=480" alt="Card image cap">
       </div>
       <div class="card-body">
         <h4 class="card-title">{{theme.themeName}}</h4>
-        <p class="card-text">{{theme.userId}}</p>
-        <a href="#" class="btn btn-outline-primary">Primary</a>
+        <p class="card-text">{{theme.userId.username}}</p>
+        <a routerLink='themeId' class="btn btn-outline-primary">Primary</a>
 
       </div>
     </div>

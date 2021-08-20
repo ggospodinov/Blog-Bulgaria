@@ -1,9 +1,9 @@
 export interface ITheme {
     subscribers: string[];
-    posts: string[];
+    posts: any[];
     _id: string;
     themeName: string;
-    img: string;
+    imagePath: string;
     userId: {
       themes: string[],
       posts: string[],

@@ -30,15 +30,15 @@ export class ThemesListComponent  {
 
   fetchThemes(): void {
     this.themes = undefined;
-    this.themeService.loadThemes().subscribe(themes =>{ this.themes = themes;
-       this.totalLength=themes.length
-       console.log(this.themes)
+    this.themeService.loadThemes().subscribe(themes =>{ this.themes = themes
+      //  this.totalLength=themes.length
+      //  console.log(this.themes)
       });
   }
 
   fetchRecentPosts(): void {
     this.recentPosts = undefined;
-    this.themeService.loadPosts(2).subscribe(posts => this.recentPosts = posts);
+    this.themeService.loadPosts(3).subscribe(posts => this.recentPosts = posts);
   }
 
   

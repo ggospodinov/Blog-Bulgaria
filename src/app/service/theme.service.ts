@@ -28,5 +28,6 @@ export class ThemeService {
    }
    saveTheme(data: any) {
      return this.http.post<ITheme>(`${API_URL}/themes`, data, { withCredentials: true });
+     
    }
 }

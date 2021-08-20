@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ThemeService } from 'src/app/service/theme.service';
 
@@ -21,14 +21,14 @@ export class ThemeComponent  {
   )
   
   {
-    // this.fetchTheme();
+      this.fetchTheme();
   }
 
-  // fetchTheme(): void {
-  //   this.theme = undefined;
-  //   const id = this.activatedRoute.snapshot.params.themeId;
-  //   this.ThemeService.loadTheme(id).subscribe(theme => this.theme = theme);
-  // }
+  fetchTheme(): void {
+    this.theme = undefined;
+    const id = this.activatedRoute.snapshot.params.themeId;
+    this.ThemeService.loadTheme(id).subscribe(theme => this.theme = theme);
+  }
 
  
 }

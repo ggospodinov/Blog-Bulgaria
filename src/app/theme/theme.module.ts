@@ -8,7 +8,6 @@ import { ThemesComponent } from './themes/themes.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ThemeService } from '../service/theme.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CreateimageComponent } from './createimage/createimage.component';
 import { AllimagesComponent } from './allimages/allimages.component';
 
 
@@ -21,7 +20,6 @@ import { AllimagesComponent } from './allimages/allimages.component';
     ThemesListComponent,
     ThemeComponent,
     ThemesComponent,
-    CreateimageComponent,
     AllimagesComponent
   
   ],

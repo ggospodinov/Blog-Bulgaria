@@ -15,8 +15,15 @@ const routes: Routes = [
             component: ThemesListComponent
           },
           {
+            // path: ':themeId',
             path: ':themeId',
-            component: ThemeComponent
+            component: ThemeComponent,
+            canActivate: [AuthActivate],
+            data: {
+              authenticationRequired: true,
+              authenticationFailureRedirectUrl: '/register',
+            }
+            
           }
         ]
       },

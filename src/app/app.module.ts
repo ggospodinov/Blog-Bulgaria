@@ -10,11 +10,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
 import { ThemeService } from './service/theme.service';
-import { ImageService } from './service/profile/profile-service.service';
+// import { ImageService } from './service/image.service';
 import { ThemeModule } from './theme/theme.module';
 
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found/not-found.component';
 
 
 
@@ -25,23 +26,24 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    NotFoundComponent,
     
    
   
   ],
   imports: [
       BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    HttpClientModule,
-    UserModule,
-    ThemeModule,
+      UserModule,
+      ThemeModule,
+      CoreModule,
+      HttpClientModule,
+      AppRoutingModule,
     
    
   ],
   providers: [
     ThemeService,
-    ImageService
+    // ImageService
   ],
 
   
