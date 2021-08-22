@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
 import { ThemeService } from './service/theme.service';
-// import { ImageService } from './service/image.service';
+import { ImageService } from './service/image.service';
 import { ThemeModule } from './theme/theme.module';
 
 import { UserModule } from './user/user.module';
@@ -38,12 +38,13 @@ import { NotFoundComponent } from './not-found/not-found/not-found.component';
       CoreModule,
       HttpClientModule,
       AppRoutingModule,
+      
     
    
   ],
   providers: [
     ThemeService,
-    // ImageService
+     ImageService
   ],
 
   

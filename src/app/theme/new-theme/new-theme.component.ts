@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm,FormControl  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ThemeService } from 'src/app/service/theme.service';
-import { Image } from "../../shared/interfaces/images";
+import { IImage } from "../../shared/interfaces/images";
 // import { ImageService } from 'src/app/service/image.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { Image } from "../../shared/interfaces/images";
 })
 export class NewThemeComponent  implements OnInit  {
   form!: FormGroup;
-  image!: Image;
+  image!: IImage;
   imageData!: string;
 
   
